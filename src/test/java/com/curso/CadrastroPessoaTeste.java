@@ -18,7 +18,6 @@ public class CadrastroPessoaTeste {
         pessoa = new Pessoa();
     }
 
-
     @Test
     public void CriarCadastroPessoaTeste() {
 
