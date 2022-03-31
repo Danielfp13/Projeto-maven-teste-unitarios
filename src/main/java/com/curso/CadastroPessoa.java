@@ -29,6 +29,6 @@ public class CadastroPessoa {
         if (!this.pessoas.contains(pessoa)) {
             throw new CadastroVazioException("Essa pessoa não esta cadastrada");
         }
-
+        this.pessoas.remove(pessoa);
     }
 }

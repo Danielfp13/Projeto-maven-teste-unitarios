@@ -1,15 +1,15 @@
 package com.curso;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 public class PrimeiroTeste {
 
     Calculadora calculadora;
 
-    @Before
+    @BeforeEach
     public void setup() {
         calculadora = new Calculadora();
     }
@@ -25,13 +25,14 @@ public class PrimeiroTeste {
         Assertions.assertThat(res).isEqualTo(15);
     }
 
-    @Test(expected = RuntimeException.class)
     public void NaodeveSomarNumerosNegativos() {
 
         //cenario
         int num1 = -10;
         int num2 = 5;
         //execução teste
+        org.junit.jupiter.api.Assertions.
+                assertThrows(RuntimeException.class, () -> calculadora.somar(num1,num2));
        int res =  calculadora.somar(num1, num2);
     }
 
@@ -65,13 +66,13 @@ public class PrimeiroTeste {
         Assertions.assertThat(res).isEqualTo(2);
     }
 
-    @Test(expected = ArithmeticException.class)
+    //@Test(expected = ArithmeticException.class)
     public void naoDeveDividirPorZero() {
         //cenario
         int num1 = 10;
         int num2 = 0;
         //execução teste
-        float res = calculadora.dividir(num1, num2);
+        org.junit.jupiter.api.Assertions.assertThrows(ArithmeticException.class, () -> calculadora.dividir(num1, num2));
     }
 
 
